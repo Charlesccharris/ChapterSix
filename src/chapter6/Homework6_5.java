@@ -1,19 +1,17 @@
-package chapter6;
-
 import java.util.Scanner;
 
 public class Homework6_5 {
 
-	public static void displaysSortedNumbers(double num1, double num2, double num3) {
+	public static void displaysSortedNumbersUp(double num1, double num2, double num3) {
 		double temp1 = num1;
 		double temp2 = num2;
 		double temp3 = num3;
 		System.out.println(num1 + "," + num2 +", and" + num3 + "is " + temp1 + ", " + temp2 + ", and " + temp3);
-		
+
 		if(temp1 < temp2 && temp1 < temp3) {
 			num1 = temp1;
 			System.out.println("Box one");
-			
+
 			if(temp2 < temp3) {
 				num2 = temp2;
 				num3 = temp3;
@@ -63,6 +61,9 @@ public class Homework6_5 {
 		num1 + ", " + num2 + ", and " + num3);
 
 	}
+	public static void displaysSortedNumbersDown(double num1, double num2, double num3){
+
+	}
 	public static void main(String[] args) {
 		/*6.5 (Sort three numbers)
 		 * Write a method with the following header to display three numbers in increasing order:
@@ -73,15 +74,15 @@ public class Homework6_5 {
 		double num2;
 		double num3;
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.print("Type in a number: ");
 		num1 = input.nextDouble();
 		System.out.print("Type in a number: ");
 		num2 = input.nextDouble();
 		System.out.print("Type in a number: ");
 		num3 = input.nextDouble();
-		
-		displaysSortedNumbers(num1, num2, num3);
+
+		displaysSortedNumbersUp(num1, num2, num3);
 
 		input.close();
 	}
