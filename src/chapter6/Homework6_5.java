@@ -1,6 +1,33 @@
 import java.util.Scanner;
 
 public class Homework6_5 {
+	
+	public static void main(String[] args) {
+		/*6.5 (Sort three numbers)
+		 * Write a method with the following header to display three numbers in increasing order:
+		 * public static void displaySortedNumbers( double num1, double num2, double num3)
+		 * Write a test program that prompts the user to enter three numbers
+		 * and invokes the method to display them in increasing order.*/
+		double num1;
+		double num2;
+		double num3;
+		Scanner input = new Scanner(System.in);
+
+		System.out.print("Type in a number: ");
+		num1 = input.nextDouble();
+		System.out.print("Type in a number: ");
+		num2 = input.nextDouble();
+		System.out.print("Type in a number: ");
+		num3 = input.nextDouble();
+
+		displaysSortedNumbersUp(num1, num2, num3);
+		displaysSortedNumbersDown(num1, num2, num3);
+		input.close();
+	}
+
+	public static void displaysSortedNumbersDown(double num1, double num2, double num3) {
+
+	}
 
 	public static void displaysSortedNumbersUp(double num1, double num2, double num3) {
 		double temp1 = num1;
@@ -60,31 +87,6 @@ public class Homework6_5 {
 		System.out.println(temp1 + ", " + temp2 + ", and " + temp3 + " in ascending order is " +
 		num1 + ", " + num2 + ", and " + num3);
 
-	}
-	public static void displaysSortedNumbersDown(double num1, double num2, double num3){
-
-	}
-	public static void main(String[] args) {
-		/*6.5 (Sort three numbers)
-		 * Write a method with the following header to display three numbers in increasing order:
-		 * public static void displaySortedNumbers( double num1, double num2, double num3)
-		 * Write a test program that prompts the user to enter three numbers
-		 * and invokes the method to display them in increasing order.*/
-		double num1;
-		double num2;
-		double num3;
-		Scanner input = new Scanner(System.in);
-
-		System.out.print("Type in a number: ");
-		num1 = input.nextDouble();
-		System.out.print("Type in a number: ");
-		num2 = input.nextDouble();
-		System.out.print("Type in a number: ");
-		num3 = input.nextDouble();
-
-		displaysSortedNumbersUp(num1, num2, num3);
-
-		input.close();
 	}
 
 }
