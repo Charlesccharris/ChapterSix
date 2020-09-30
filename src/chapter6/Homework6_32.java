@@ -27,11 +27,7 @@ public class Homework6_32 {
 				break;
 			default:
 				System.out.println("Point established, point is: " + total);
-				rollAgain(total);
-					if(won)
-						wins++;
-					else
-						losses++;
+				rollAgain(total, wins, losses);
 				break;
 			}
 		}
@@ -56,12 +52,14 @@ public class Homework6_32 {
 
 			if(subTotal == 7){
 				System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You lose");
-				wonOrLost = 1;
+				losses++;
+				return losses;
 				keepRolling = false;
 			}
 			else if(subTotal == total){
                                 System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You win");
-				wonOrLost = 0;
+				wins++;
+				return wins;
 				keepRolling = false;
 			}
 			else{
@@ -72,8 +70,8 @@ public class Homework6_32 {
                         System.out.println(rollOne + " and " + rollTwo + " is " + subTotal);
 			}
 		}
-		return wonOrLost;
+	
 	}
-	}
+	
 
 }
