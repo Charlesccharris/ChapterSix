@@ -38,18 +38,18 @@ public class Homework6_5 {
 		}
 
 		switch(choice){
-		case 0:
-                System.out.print(num1 + ", " + num2 + ", and " + num3 + " in ascending order is: ");
-		displaysSortedNumbersUp(num1, num2, num3);
-		break;
+			case 0:
+        	        System.out.print(num1 + ", " + num2 + ", and " + num3 + " in ascending order is: ");
+			displaysSortedNumbersUp(num1, num2, num3);
+			break;
 
-		case 1:
-		System.out.print(num1 + ", " + num2 + ", and " + num3 + " in descending order is: ");
-		displaysSortedNumbersDown(num1, num2, num3);
-		break;
+			case 1:
+			System.out.print(num1 + ", " + num2 + ", and " + num3 + " in descending order is: ");
+			displaysSortedNumbersDown(num1, num2, num3);
+			break;
 
-		default:
-		System.out.println("Bye");
+			default:
+			System.out.println("Bye");
 		}
 
 		input.close();
