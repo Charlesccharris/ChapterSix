@@ -1,6 +1,5 @@
-package chapter6;
-
 public class Homework6_32 {
+
 
 	public static void main(String[] args) {
 		/*6.32 (Game: chance of winning at craps)
@@ -8,7 +7,9 @@ public class Homework6_32 {
           	int currentRound = 1;
 		int wins = 0;
 		int losses = 0;
-		For(currentRound < 10_000, currentRound = 1, currentRound++){
+		int determine = 0;
+
+		for(currentRound = 1; currentRound <= 10_000; currentRound++){
 			int diceOne = diceRolls();
         	        int diceTwo = diceRolls();
 
@@ -27,10 +28,19 @@ public class Homework6_32 {
 				break;
 			default:
 				System.out.println("Point established, point is: " + total);
-				rollAgain(total, wins, losses);
+				determine = rollAgain(total);
+					if(determine == 2)
+						losses++;
+					else if(determine == 3)
+						wins++;
+					else
+						System.out.println("");
 				break;
 			}
 		}
+
+		System.out.println("You won " + wins + " times, and lost " + losses + " times");
+
 	}
 
 	public static int diceRolls(){
@@ -39,39 +49,35 @@ public class Homework6_32 {
 		return roll;
 	}
 
-	public static void rollAgain(int total){
+	public static int rollAgain(int total){
 
                 int rollOne = diceRolls();
 		int rollTwo = diceRolls();
-
 		boolean keepRolling = true;
-		int wonOrLost;
+		int determine = 0;
                 int subTotal = rollOne + rollTwo;
 
 		while(keepRolling){
 
 			if(subTotal == 7){
 				System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You lose");
-				losses++;
-				return losses;
-				keepRolling = false;
+				determine = 2;
+				return determine;
 			}
 			else if(subTotal == total){
                                 System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You win");
-				wins++;
-				return wins;
-				keepRolling = false;
+				determine = 3;
+				return determine;
 			}
 			else{
-			System.out.println("Roll again");
-	                rollOne = diceRolls();
-			rollTwo = diceRolls();
-        	        subTotal = rollOne + rollTwo;
-                        System.out.println(rollOne + " and " + rollTwo + " is " + subTotal);
+				System.out.println("Roll again");
+	                	rollOne = diceRolls();
+				rollTwo = diceRolls();
+        	        	subTotal = rollOne + rollTwo;
+                        	System.out.println(rollOne + " and " + rollTwo + " is " + subTotal);
+				keepRolling = true;
 			}
 		}
-	
+	return determine;
 	}
-	
-
 }
