@@ -25,10 +25,10 @@ public class Homework6_30 {
 		System.out.println(diceOne + " " + diceTwo);
 
 		switch(total){
-		case 2: case 3: case 12:
+		case 2: case 3: case 4: case 5: case 6: case 8: case 34: case 36: case 37: case 38: case 39: case 40:
 			System.out.println("Craps! You lost!");
 			break;
-		case 7: case 11:
+		case 16: case 20: case 21: case 22: case 26:
 			System.out.println("Natural! You won!");
 			break;
 		default:
@@ -40,7 +40,7 @@ public class Homework6_30 {
 
 	public static int diceRolls(){
 
-		int roll =(int)(Math.random()*6+1);
+		int roll =(int)(Math.random()*20+1);
 		return roll;
 	}
 
@@ -55,7 +55,7 @@ public class Homework6_30 {
 
 		while(keepRolling){
 
-			if(subTotal == 7){
+			if(subTotal == 21){
 				System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You lose");
 				keepRolling = false;
 			}
