@@ -22,7 +22,7 @@ public class Homework6_30 {
 
 		int total = diceOne + diceTwo;
 
-		System.out.println(diceOne + " " + diceTwo);
+		System.out.println(diceOne + " and " + diceTwo + " is " + total);
 
 		switch(total){
 		case 2: case 3: case 4: case 5: case 6: case 8: case 34: case 36: case 37: case 38: case 39: case 40:
