@@ -31,7 +31,7 @@ public class Homework6_32 {
 			System.exit(1);
 		}
 
-		System.out.println("\nNow enter a multiplier, (N)one, (T)housands: ");
+		System.out.println("\nNow enter a multiplier, (N)one, (T)housands, (M)illions: ");
 		multiplier = input.next().charAt(0);
 		multiplier = Character.toUpperCase(multiplier);
 
@@ -39,6 +39,8 @@ public class Homework6_32 {
 			totalRounds *= 1;
 		else if(multiplier == 'T')
 			totalRounds *= 1_000;
+		else if(multiplier == 'M')
+			totalRounds *= 1_000_000;
 		else{
 			System.out.println("That's not a valid input");
 			totalRounds *= 0;
@@ -60,15 +62,15 @@ public class Homework6_32 {
 
 			int total = diceOne + diceTwo;
 
-			System.out.println(diceOne + " " + diceTwo);
+			System.out.println(diceOne + " and " + diceTwo + " is " + total);
 
 			switch(total){
 			case 2: case 3: case 12:
-				System.out.println("Craps! You lost!");
+				System.out.println("Craps! You lost!\n");
 				losses++;
 				break;
 			case 7: case 11:
-				System.out.println("Natural! You won!");
+				System.out.println("Natural! You won!\n");
 				wins++;
 				break;
 			default:
@@ -139,12 +141,12 @@ public class Homework6_32 {
 		while(keepRolling){
 
 			if(subTotal == 7){
-				System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You lose");
+				System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You lose\n");
 				determine = 2;
 				return determine;
 			}
 			else if(subTotal == total){
-                                System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You win");
+                                System.out.println(rollOne + " and " + rollTwo + " is " + subTotal + " You win\n");
 				determine = 3;
 				return determine;
 			}
